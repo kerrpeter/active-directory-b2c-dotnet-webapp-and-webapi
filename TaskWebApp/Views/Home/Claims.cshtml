@@ -12,7 +12,7 @@
         <th class="claim-data claim-head">Claim Value</th>
     </tr>
 
-    @foreach (Claim claim in ClaimsPrincipal.Current.Claims)
+    @foreach (Claim claim in ClaimsPrincipal.Current.Claims.OrderBy(c => c.Type))
     {
         <tr>
             <td class="claim-type claim-data">@claim.Type</td>
